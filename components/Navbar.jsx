@@ -10,8 +10,10 @@ const Navbar = () => {
                     <Image src="/img/telephone.png" alt="" width="32" height="32" />
                 </div>
                 <div className={styles.texts}>
-                    <div className={styles.text}>ORDER NOW!</div>
-                    <div className={styles.text}>012 345 678</div>
+                    <div className={styles.text}>Skierniewice</div>
+                    <div className={styles.text}>500 565 652</div>
+                    <div className={styles.text}>Drzewica</div>
+                    <div className={styles.text}>729 379 234</div>
                 </div>
             </div>
             <div className={styles.item}>

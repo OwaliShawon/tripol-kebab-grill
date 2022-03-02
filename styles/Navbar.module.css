@@ -41,6 +41,14 @@
     font-size: 12px;
     font-weight: 500;
   }
+  .text:nth-child(2) {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .text:nth-child(3) {
+    font-size: 12px;
+    font-weight: 500;
+  }
   
   .text:last-child {
     font-size: 20px;
