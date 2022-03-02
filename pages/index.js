@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import KebabList from '../components/KebabList.jsx';
 import styles from '../styles/Home.module.css';
 import Featured from './../components/Featured';
 
@@ -11,6 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured></Featured>
+      <KebabList></KebabList>
     </div>
   )
 }
