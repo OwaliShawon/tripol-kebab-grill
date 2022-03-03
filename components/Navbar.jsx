@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className={styles.container}>
             <div className={styles.item}>
                 <div className={styles.callButton}>
-                    <Image src="/img/telephone.png" alt="" width="32" height="32" />
+                    <Image src="/img/telephone.png" alt="" width="20" height="20" />
                 </div>
                 <div className={styles.texts}>
                     <div className={styles.text}>Skierniewice</div>
@@ -31,7 +31,9 @@ const Navbar = () => {
                     <Image src="/img/cart.png" alt="" width="30px" height="30px" />
                     <div className={styles.counter}>2</div>
                 </div>
-                <Image src="/img/logo.png" alt="" width="70px" height="70px" />
+                <div className={styles.logoImage}>
+                    <Image src="/img/logo.png" alt="" width="70px" height="70px" objectFit='cover' />
+                </div>
             </div>
         </div>
     );

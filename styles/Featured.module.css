@@ -7,13 +7,15 @@
   
   .arrowContainer {
     position: absolute;
-    width: 10%;
-    height: 20%;
+    width: 3%;
+    height: 6%;
     top: 0;
     bottom: 0;
     margin: auto;
     cursor: pointer;
     z-index: 2;
+    background-color: black;
+    border-radius: 40%;
   }
   
   .wrapper {
@@ -28,8 +30,32 @@
     height: 100%;
     position: relative;
   }
+
   @media screen and (max-width: 480px) {
     .container{
-      height: 30vh;
+      height: 50vw;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .container{
+      height: 50vw;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .container{
+      height: 50vw;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .container{
+      height: 50vh;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .container{
+      height: 100vh;
     }
   }
