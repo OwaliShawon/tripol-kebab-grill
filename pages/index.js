@@ -1,9 +1,11 @@
+import axios from 'axios';
 import Head from 'next/head';
-import KebabList from '../components/KebabList.jsx';
 import styles from '../styles/Home.module.css';
 import Featured from './../components/Featured';
+import KebabList from './../components/KebabList';
 
-export default function Home() {
+export default function Home({ kebabList }) {
+  // console.log(kebabList);
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +14,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured></Featured>
-      <KebabList></KebabList>
+      <KebabList kebabList={kebabList}></KebabList>
     </div>
   )
 }
+
+export const getServerSideProps = async () => {
+  const res = await axios.get('http://localhost:3000/api/products');
+  return {
+    props: {
+      kebabList: res.data
+    }
+  }
+};
