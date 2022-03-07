@@ -6,10 +6,14 @@ import styles from "../../styles/Product.module.css";
 const Product = ({ kebab }) => {
     const [size, setSize] = useState(0);
     const [price, setPrice] = useState(kebab.prices[0]);
+    const [quantity, setQuantity] = useState(1);
+    const [extras, setExtras] = useState([]);
+    console.log(quantity);
+    console.log(extras);
 
 
-    const changePrice = (number) => {
-        setPrice(price + number);
+    const changePrice = (extraOptionPrice) => {
+        setPrice(price + extraOptionPrice);
     }
 
     const handleSize = (sizeIndex) => {
@@ -25,8 +29,20 @@ const Product = ({ kebab }) => {
         const checked = e.target.checked;
         if (checked) {
             changePrice(option.price);
+            setExtras((prev) => [...prev, option]);
         } else {
             changePrice(-option.price);
+            setExtras(extras.filter((extra) => extra._id !== option._id));
+        }
+    }
+
+    const handleQuantity = (e) => {
+        const quantity = e.target.value;
+        if (quantity > 0) {
+            setQuantity(quantity);
+        }
+        else {
+            e.target.value = 1;
         }
     }
 
@@ -73,12 +89,13 @@ const Product = ({ kebab }) => {
                                     onChange={(e) => handleChange(e, option)}
                                 />
                                 <label htmlFor="double">{option.text}</label>
+                                <label htmlFor="double">+ ${option.price}</label>
                             </div>
                         ))
                     }
                 </div>
                 <div className={styles.add}>
-                    <input type="number" defaultValue={1} className={styles.quantity} />
+                    <input type="number" defaultValue={1} className={styles.quantity} onChange={(e) => handleQuantity(e)} />
                     <button className={styles.button}>Add to Cart</button>
                 </div>
             </div>
