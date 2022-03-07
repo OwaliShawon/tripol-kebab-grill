@@ -6,6 +6,7 @@ export default async function handler(req, res) {
   const { method } = req;
 
   dbConnect();
+
   // get all the products
   if (method === "GET") {
     try {

@@ -2,7 +2,7 @@ import styles from "../styles/KebabList.module.css";
 import KebabCard from "./KebabCard";
 
 const KebabList = ({ kebabList }) => {
-    console.log(kebabList);
+
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>THE BEST KEBAB IN TOWN</h1>
