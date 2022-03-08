@@ -15,6 +15,7 @@ const Product = ({ kebab }) => {
 
     const handleClick = () => {
         dispatch(addProduct({ ...kebab, extras, price, quantity }));
+        console.log(kebab);
     };
 
 

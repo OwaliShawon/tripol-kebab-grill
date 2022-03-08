@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styles from '../styles/Navbar.module.css';
@@ -20,7 +21,9 @@ const Navbar = () => {
             </div>
             <div className={styles.item}>
                 <ul className={styles.list}>
-                    <li className={styles.listItem}>Homepage</li>
+                    <Link href="/" passHref>
+                        <li className={styles.listItem}>Home</li>
+                    </Link>
                     <li className={styles.listItem}>Products</li>
                     <li className={styles.listItem}>Menu</li>
                     <li className={styles.listItem}>Events</li>
@@ -29,13 +32,17 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className={styles.item}>
-                <div className={styles.cart}>
-                    <Image src="/img/cart.png" alt="" width="30px" height="30px" />
-                    <div className={styles.counter}>{quantity}</div>
-                </div>
-                <div className={styles.logoImage}>
-                    <Image src="/img/logo.png" alt="" width="70px" height="70px" objectFit='cover' />
-                </div>
+                <Link href="/cart" passHref>
+                    <div className={styles.cart}>
+                        <Image src="/img/cart.png" alt="" width="30px" height="30px" />
+                        <div className={styles.counter}>{quantity}</div>
+                    </div>
+                </Link>
+                <Link href="/" passHref>
+                    <div className={styles.logoImage}>
+                        <Image src="/img/logo.png" alt="" width="70px" height="70px" objectFit='cover' />
+                    </div>
+                </Link>
             </div>
         </div>
     );
