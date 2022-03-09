@@ -67,11 +67,17 @@
   .listItem {
     margin: 20px;
     font-weight: 500;
+    cursor: pointer;
   }
   
   .cart{
       position: relative;
       margin-right: 20px;
+      cursor: pointer;
+  }
+
+  .logoImage{
+    cursor: pointer;
   }
   
   .counter{
