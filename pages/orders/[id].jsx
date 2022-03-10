@@ -1,8 +1,9 @@
+import axios from "axios";
 import Image from "next/image";
 import styles from "../../styles/Order.module.css";
 
-const Order = () => {
-    const status = 0;
+const Order = ({ order }) => {
+    const status = order.status;
 
     const statusClass = (index) => {
         if (index - status < 1) return styles.done;
@@ -22,16 +23,16 @@ const Order = () => {
                         </tr>
                         <tr className={styles.tr}>
                             <td>
-                                <span className={styles.id}>129837819237</span>
+                                <span className={styles.id}>{order._id}</span>
                             </td>
                             <td>
-                                <span className={styles.name}>John Doe</span>
+                                <span className={styles.name}>{order.customer}</span>
                             </td>
                             <td>
-                                <span className={styles.address}>Elton st. 212-33 LA</span>
+                                <span className={styles.address}>{order.address}</span>
                             </td>
                             <td>
-                                <span className={styles.total}>$79.80</span>
+                                <span className={styles.total}>${order.total}</span>
                             </td>
                         </tr>
                     </table>
@@ -104,12 +105,19 @@ const Order = () => {
                         <b className={styles.totalTextTitle}>Total:</b>$79.60
                     </div>
                     <button disabled className={styles.button}>
-                        PAID
+                        PAYMENT COMPLETE
                     </button>
                 </div>
             </div>
         </div>
     );
+};
+
+export const getServerSideProps = async ({ params }) => {
+    const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+    return {
+        props: { order: res.data },
+    };
 };
 
 export default Order;

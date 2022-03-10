@@ -7,7 +7,6 @@ export default async function handler(req, res) {
 
     dbConnect();
 
-
     if (method === "POST") {
         try {
             const orders = await Order.create(req.body);

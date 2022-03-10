@@ -2,10 +2,14 @@ import {
     PayPalButtons,
     PayPalScriptProvider, usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import axios from "axios";
 import Image from 'next/image';
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { reset } from "../redux/cartSlice";
 import styles from "../styles/Cart.module.css";
+import OrderDetail from './../components/OrderDetails';
 
 
 
@@ -18,6 +22,20 @@ const Cart = () => {
     const amount = cart.total;
     const currency = "PLN";
     const style = { "layout": "vertical" };
+    const dispatch = useDispatch();
+    const router = useRouter();
+
+    const createOrder = async (data) => {
+        try {
+            const res = await axios.post("http://localhost:3000/api/orders", data);
+            if (res.status === 201) {
+                dispatch(reset());
+                router.push(`/orders/${res.data._id}`);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     // Custom component to wrap the PayPalButtons and handle currency changes
     const ButtonWrapper = ({ currency, showSpinner }) => {
@@ -63,7 +81,14 @@ const Cart = () => {
                 onApprove={function (data, actions) {
                     return actions.order.capture().then(function (details) {
                         // Your code here after capture the order
-                        console.log(details);
+                        const shipping = details.purchase_units[0].shipping;
+                        console.log(shipping);
+                        createOrder({
+                            customer: shipping.name.full_name,
+                            address: shipping.address.address_line_1,
+                            total: cart.total,
+                            method: 1,
+                        });
                     });
                 }}
             />
@@ -168,6 +193,7 @@ const Cart = () => {
                     }
                 </div>
             </div>
+            {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
         </div >
     );
 };
