@@ -1,0 +1,194 @@
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+	margin-bottom: 15%;
+}
+
+.ourStory__wrapper {
+	display: flex;
+	flex-direction: column;
+
+}
+.ourStory__title{
+	font-size: 1.2rem;
+	font-weight: 200;
+	color: var(--black-1);
+	margin-bottom: 1rem;
+}
+.ourStory__subtitle {
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--black-1);
+	margin-bottom: 2rem;
+}
+.ourStory__text{
+	font-size: 1.2rem;
+	color: var(--black-2);
+	text-align: justify;
+
+}
+.ourStory__img{
+	margin-left: 10%;
+}
+
+@media only screen and (min-width: 768px) {
+	.ourStory__wrapper {
+		flex-direction: row;
+		gap: 3rem;
+	}
+	.ourStory__img {
+		flex: 1;
+		margin-top: 109px;
+	}
+	.ourStory__info {
+		flex: 1;
+		margin-top: 8%;
+	}
+	.ourStory__title,
+	.ourGoals__title {
+		font-size: 3rem;
+	}
+	.ourStory__subtitle {
+		font-size: 1rem;
+	}
+	.ourStory__text,
+	.ourGoals__text {
+		font-size: 1.3rem;
+		max-width: 800px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.ourGoals__info {
+		text-align: justify;
+	}
+	.ourGoals__img__wrapper {
+		gap: 2rem;
+	}
+}
+
+
+
+.info_features {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-flow: wrap;
+}
+
+.card_feature_header {
+	text-align: left;
+	padding: 10px 10px;
+	color: #222022;
+	font-size: 11px;
+	line-height: 1.5;
+}
+.card_feature_header .title {
+	font-weight: 500;
+	color: #222022;
+}
+
+.card_feature {
+	width: 30%;
+	background: #fff;
+	margin-bottom: 50px;
+	transition: 0.3s;
+	height: 250px;
+}
+.card_feature_body {
+	padding: 10px 10px;
+	text-align: left;
+	font-size: 20px;
+	line-height: 1.5;
+	color: #222022;
+	margin-left: 10%;
+	
+}
+
+.card_feature:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1000px) {
+	.card_feature {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.info_features {
+		width: 100%;
+	}
+	.card_feature {
+		width: 80%;
+	}
+}
+
+.container_dish {
+	width: 90%;
+
+	padding: 20px 20px 28px 20px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+@media (min-width: 576px) {
+	.container_dish {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		margin: 40px;
+		padding: 32px;
+	}
+}
+
+.dish_image {
+	width: 100%;
+	height: 100%;
+	background: url("https://www.thekebabfactory.net/files/img/shrimp-kebab.gif")
+		no-repeat center;
+	-o-object-fit: cover;
+	object-fit: cover;
+	margin-bottom: 18px;
+}
+
+@media (min-width: 576px) {
+	.dish_image {
+		width: 45%;
+		max-height: none;
+		min-height: 300px;
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 576px) {
+	.dish_content {
+		width: 55%;
+		padding-left: 40px;
+	}
+}
+
+.dish_text {
+	font-size: 20px;
+	line-height: 1.4;
+	color: #222022;	
+	padding: 0 4px;
+	margin-left: -4px;
+	text-align: justify;
+	
+}

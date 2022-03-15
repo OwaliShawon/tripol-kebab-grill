@@ -63,6 +63,10 @@ const Footer = () => {
 						FRIDAY
 						<br /> 11:00 – 24:00
 					</p>
+					<p className={styles.text}>
+						FRIDAY
+						<br /> 11:00 – 24:00
+					</p>
 				</div>
 			</div>
 		</div>
