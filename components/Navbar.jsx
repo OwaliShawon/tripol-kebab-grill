@@ -36,7 +36,6 @@ const Navbar = () => {
                     <Link href="/contact" passHref>
                         <li className={styles.listItem}>Contact</li>
                     </Link>
-                   
                 </ul>
             </div>
             <div className={styles.item}>

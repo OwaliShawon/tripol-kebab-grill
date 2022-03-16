@@ -48,11 +48,19 @@ const Footer = () => {
 						<br /> 11:00 – 24:00
 					</p>
 					<p className={styles.text}>
+						TUESDAY
+						<br /> 11:00 – 24:00
+					</p>
+					<p className={styles.text}>
 						WEDNESDAY
 						<br /> 11:00 – 24:00
 					</p>
 					<p className={styles.text}>
-						Thursday
+						THURSDAY
+						<br /> 11:00 – 24:00
+					</p>
+					<p className={styles.text}>
+						FRIDAY
 						<br /> 11:00 – 24:00
 					</p>
 					<p className={styles.text}>
