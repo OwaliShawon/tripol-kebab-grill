@@ -1,13 +1,16 @@
+import { useRouter } from "next/router";
 import React from "react";
 import styles from "../styles/CardButton.module.css";
 
 const CardButton = ({ kebab }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/product/${kebab._id}`);
+  };
   return (
-    <div>
-      <button className={styles.button}>
-        <div className={styles.button__text}>
-          <a href={`product/${kebab._id}`}>Order Now</a>
-        </div>
+    <div className={styles.container}>
+      <button className={styles.button} onClick={handleClick}>
+        <div className={styles.button__text}>Order Now</div>
         <svg
           className={styles.button__svg}
           role="presentational"

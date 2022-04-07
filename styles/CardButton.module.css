@@ -1,3 +1,6 @@
+.container {
+  padding: 10px;
+}
 /* only animate if the device supports hover */
 @media (hover: hover) {
   #creditcard {
@@ -52,7 +55,7 @@
   position: relative;
   border-radius: 8px;
   letter-spacing: 0.7px;
-  background-color: #5086bd;
+  background-color: #7a2020;
   color: #fff;
   font-size: 16px;
   font-family: "Lato", sans-serif;

@@ -23,10 +23,10 @@
 }
 
 .price {
-  color: #d1411e;
+  color: #7a2020;
   font-size: 24px;
   font-weight: 400;
-  border-bottom: 1px solid #d1411e;
+  border-bottom: 1px solid #7a2020;
 }
 
 .sizes {
@@ -89,7 +89,7 @@
 .button {
   height: 30px;
   margin-left: 10px;
-  background-color: #d1411e;
+  background-color: #7a2020;
   color: white;
   border: none;
   font-weight: 500;
