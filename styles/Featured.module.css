@@ -1,61 +1,61 @@
 .container {
-    height: calc(100vh - 100px);
-    background-color: #7a2020;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .arrowContainer {
-    position: absolute;
-    width: 3%;
-    height: 6%;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    cursor: pointer;
-    z-index: 2;
-    background-color: black;
-    border-radius: 40%;
-  }
-  
-  .wrapper {
-    width: 300vw;
-    height: 100%;
-    display: flex;
-    transition: all 1.5s ease-in-out ;
-  }
-  
-  .imgContainer {
-    width: 100vw;
-    height: 100%;
-    position: relative;
-  }
+  height: calc(100vh - 100px);
+  background-color: #7a2020;
+  overflow: hidden;
+  position: relative;
+}
 
-  @media screen and (max-width: 480px) {
-    .container{
-      height: 50vw;
-    }
-  }
+.arrowContainer {
+  position: absolute;
+  width: 3%;
+  height: 6%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+  z-index: 2;
+  background-color: black;
+  border-radius: 40%;
+}
 
-  @media screen and (min-width: 480px) {
-    .container{
-      height: 50vw;
-    }
-  }
+.wrapper {
+  width: 300vw;
+  height: 100%;
+  display: flex;
+  transition: all 1.5s ease-in-out;
+}
 
-  @media screen and (min-width: 768px) {
-    .container{
-      height: 50vw;
-    }
-  }
+.imgContainer {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+}
 
-  @media screen and (min-width: 1024px) {
-    .container{
-      height: 50vh;
-    }
+@media screen and (max-width: 480px) {
+  .container {
+    height: 50vw;
   }
-  @media screen and (min-width: 1200px) {
-    .container{
-      height: 100vh;
-    }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    height: 50vw;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: 50vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    height: 100vh;
+  }
+}
