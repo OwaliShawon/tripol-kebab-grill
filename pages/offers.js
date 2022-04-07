@@ -1,5 +1,5 @@
-import React from 'react';
 import Image from "next/image";
+import React from 'react';
 import styles from "../styles/Offers.module.css";
 
 const Offers = () => {
@@ -9,13 +9,13 @@ const Offers = () => {
       <div className={styles.box}>
         <div className={styles.products}>
           <div className={styles.product}>
-          <Image
+            <Image
               src="/img/menu/Philadelphia.jpg"
               alt=""
-              className={styles.product_img }
+              className={styles.product_img}
               width={300}
               height={200}
-						/>
+            />
             <div className={styles.product_info}>
               <h3 className={styles.product_name}>Burra kebab</h3>
               <h4 className={styles.product_price}>180 tk</h4>
@@ -28,12 +28,12 @@ const Offers = () => {
             </div>
           </div>
           <div className={styles.product}>
-          <Image
+            <Image
               src="/img/menu/Philadelphia.jpg"
               alt=""
               width={300}
               height={200}
-						/>
+            />
             <div className={styles.product_info}>
               <h3 className={styles.product_name}>Burra kebab</h3>
               <h4 className={styles.product_price}>180 tk</h4>
@@ -46,12 +46,12 @@ const Offers = () => {
             </div>
           </div>
           <div className={styles.product}>
-          <Image
+            <Image
               src="/img/menu/Philadelphia.jpg"
               alt=""
               width={300}
               height={200}
-						/>
+            />
             <div className={styles.product_info}>
               <h3 className={styles.product_name}>Burra kebab</h3>
               <h4 className={styles.product_price}>180 tk</h4>
@@ -64,12 +64,12 @@ const Offers = () => {
             </div>
           </div>
           <div className={styles.product}>
-          <Image
+            <Image
               src="/img/menu/Philadelphia.jpg"
               alt=""
               width={300}
               height={200}
-						/>
+            />
             <div className={styles.product_info}>
               <h3 className={styles.product_name}>Burra kebab</h3>
               <h4 className={styles.product_price}>180 tk</h4>
