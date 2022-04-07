@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "../styles/KebabCard.module.css";
 
 const KebabCard = ({ kebab }) => {
-  console.log(kebab);
   return (
     <div className={styles.container}>
       <Link href={`product/${kebab._id}`} passHref>
