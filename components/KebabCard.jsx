@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/KebabCard.module.css";
+import CardButton from "./CardButton";
 
 const KebabCard = ({ kebab }) => {
   return (
@@ -11,6 +12,7 @@ const KebabCard = ({ kebab }) => {
       <h1 className={styles.title}>{kebab.title}</h1>
       <span className={styles.price}>${kebab.prices[0]}</span>
       <p className={styles.desc}>{kebab.desc}</p>
+      <CardButton kebab={kebab}></CardButton>
     </div>
   );
 };
