@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   const token = cookies.token
 
-  dbConnect();
+  await dbConnect();
 
   // get all the products
   if (method === "GET") {
