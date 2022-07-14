@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Add from '../components/Add';
 import AddButton from '../components/AddButton';
 import styles from '../styles/Home.module.css';
-import Featured from './../components/Featured';
 import KebabList from './../components/KebabList';
 
 export default function Home({ kebabList, admin }) {

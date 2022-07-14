@@ -1,4 +1,5 @@
 import axios from "axios";
+import Image from "next/image";
 import { useState } from "react";
 import styles from "../../styles/Admin.module.css";
 
@@ -54,13 +55,13 @@ const Index = ({ orders, products }) => {
                         <tbody key={product._id}>
                             <tr className={styles.trTitle}>
                                 <td>
-                                    {/* <Image
+                                    <Image
                                         src={product.img}
                                         width={50}
                                         height={50}
                                         objectFit="cover"
                                         alt=""
-                                    /> */}
+                                    />
                                 </td>
                                 <td>{product._id.slice(0, 5)}...</td>
                                 <td>{product.title}</td>

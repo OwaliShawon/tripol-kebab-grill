@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
     // update product
     if (method === "PUT") {
-        if (!token || token !== process.env.token) {
+        if (!token || token !== process.env.TOKEN) {
             return res.status(401).json("Not authenticated!")
         }
         try {
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
     // delete product
     if (method === "DELETE") {
-        if (!token || token !== process.env.token) {
+        if (!token || token !== process.env.TOKEN) {
             return res.status(401).json("Not authenticated!")
         }
         try {
