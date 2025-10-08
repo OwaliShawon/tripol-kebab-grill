@@ -76,7 +76,7 @@ tripol-kebab-grill/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 14.x or later
+- Node.js 18.x or later
 - MongoDB database
 - Firebase project (for authentication)
 - PayPal developer account
