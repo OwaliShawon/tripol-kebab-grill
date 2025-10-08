@@ -1,34 +1,203 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🥙 Tripol Kebab & Grill
 
-## Getting Started
+A modern, full-stack e-commerce web application for a kebab restaurant built with Next.js, featuring online ordering, payment processing, and administrative functionality.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
+[https://tripolkebab.vercel.app/](https://tripolkebab.vercel.app/)
+
+## ✨ Features
+
+### Customer Features
+- 🍽️ Browse kebab menu with detailed product information
+- 🛒 Shopping cart with real-time updates
+- 💳 Secure payment processing with PayPal integration
+- 📱 Responsive design for mobile and desktop
+- 🧾 Order tracking and history
+- 📞 Contact and about pages
+
+### Admin Features
+- 🔐 Admin authentication system
+- ➕ Add, edit, and delete products
+- 📊 Order management dashboard
+- 🖼️ Image upload for products
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 12** - React framework with SSR/SSG
+- **React 17** - User interface library
+- **Redux Toolkit** - State management
+- **CSS Modules** - Styling solution
+- **Axios** - HTTP client for API calls
+
+### Backend
+- **Next.js API Routes** - Serverless functions
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB object modeling
+
+### Integrations
+- **PayPal SDK** - Payment processing
+- **Firebase** - Authentication and file storage
+- **Vercel** - Deployment platform
+
+## 📁 Project Structure
+
+```
+tripol-kebab-grill/
+├── components/          # Reusable React components
+│   ├── Add.jsx         # Product addition form
+│   ├── Featured.jsx    # Featured products section
+│   ├── KebabCard.jsx   # Individual product card
+│   ├── KebabList.jsx   # Product grid/list
+│   ├── Navbar.jsx      # Navigation component
+│   └── ...
+├── pages/              # Next.js pages and API routes
+│   ├── api/            # Backend API endpoints
+│   │   ├── orders/     # Order management APIs
+│   │   └── products/   # Product management APIs
+│   ├── admin/          # Admin dashboard pages
+│   ├── orders/         # Order tracking pages
+│   └── ...
+├── models/             # MongoDB schemas
+│   ├── Order.js        # Order data model
+│   └── Product.js      # Product data model
+├── redux/              # State management
+│   ├── cartSlice.js    # Shopping cart logic
+│   └── store.js        # Redux store configuration
+├── styles/             # CSS modules
+├── util/               # Utility functions
+│   ├── firebase-config.js
+│   └── mongo.js        # MongoDB connection
+└── public/             # Static assets
+    └── img/            # Product and UI images
 ```
 
-Open [https://tripolkebab.vercel.app/](https://tripolkebab.vercel.app/) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 14.x or later
+- MongoDB database
+- Firebase project (for authentication)
+- PayPal developer account
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [https://tripolkebab.vercel.app/api/hello](https://tripolkebab.vercel.app/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Installation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/OwaliShawon/tripol-kebab-grill.git
+   cd tripol-kebab-grill
+   ```
 
-## Learn More
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Environment Setup**
+   
+   Create a `.env.local` file in the root directory:
+   ```env
+   # MongoDB
+   MONGODB_URL=your_mongodb_connection_string
+   
+   # Firebase
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
+   
+   # PayPal
+   NEXT_PUBLIC_PAYPAL_CLIENT_ID=your_paypal_client_id
+   
+   # Admin Authentication
+   ADMIN_USERNAME=your_admin_username
+   ADMIN_PASSWORD=your_admin_password
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
 
-## Deploy on Vercel
+## 📝 Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🔧 Configuration
+
+### Database Setup
+The application uses MongoDB with Mongoose for data modeling. Ensure your MongoDB instance is running and accessible via the connection string in your environment variables.
+
+### Firebase Setup
+Firebase is used for authentication and file storage. Configure your Firebase project and add the credentials to your environment variables.
+
+### PayPal Integration
+Set up PayPal SDK for payment processing by adding your client ID to the environment variables.
+
+## 📊 API Endpoints
+
+### Products
+- `GET /api/products` - Get all products
+- `GET /api/products/[id]` - Get product by ID
+- `POST /api/products` - Create new product (admin)
+- `PUT /api/products/[id]` - Update product (admin)
+- `DELETE /api/products/[id]` - Delete product (admin)
+
+### Orders
+- `GET /api/orders` - Get all orders (admin)
+- `GET /api/orders/[id]` - Get order by ID
+- `POST /api/orders` - Create new order
+- `PUT /api/orders/[id]` - Update order status (admin)
+
+### Authentication
+- `POST /api/login` - Admin login
+
+## 🎨 Styling
+
+The project uses CSS Modules for component-specific styling, ensuring style encapsulation and preventing CSS conflicts. Global styles are defined in `styles/globals.css`.
+
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+- 📱 Mobile devices (320px+)
+- 📟 Tablets (768px+)
+- 💻 Desktop (1024px+)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👨‍💻 Developer
+
+**Owali Shawon**
+- GitHub: [@OwaliShawon](https://github.com/OwaliShawon)
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- MongoDB team for the database solution
+- PayPal for payment processing
+- Vercel for hosting platform
+
+---
+
+Made with ❤️ for kebab lovers everywhere!
